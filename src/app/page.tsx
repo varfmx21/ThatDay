@@ -7,6 +7,7 @@ import { FloatingHearts } from "@/components/floating-hearts";
 import { SectionDivider } from "@/components/section-divider";
 import { FoldCard, FoldSection } from "@/components/fold-card";
 import { ImageModal } from "@/components/image-modal";
+import { WordHeart } from "@/components/word-heart";
 import Image from "next/image";
 
 
@@ -20,77 +21,63 @@ import Image from "next/image";
 */
 
 interface TimelineItem {
-  emoji: string;
-  time: string;
-  date: string;
-  title: string;
-  description: string;
+  emoji: string | null;
+  title: string | null;
+  description: string | null;
   image: string | null;
+  time?: string | null;
+  date?: string | null;
 }
 
 const TIMELINE: TimelineItem[] = [
   {
-    emoji: "💬",
-    time: "00:00",
-    date: "DD Month YYYY",
-    title: "The First Message",
+    emoji: "🥭",
+    title: "Mi manguito",
     description:
-      "Replace this with how your story began. That first message, that first hello - the moment that started everything.",
-    image: null,
+      "No se en que momento te comence a decir asi, pero te convertiste en una persona tan dulce y especial como lo es un manguito para mi jajaja",
+    image: "/dex-rita.jpg",
   },
   {
     emoji: "💘",
-    time: "00:00",
-    date: "DD Month YYYY",
-    title: "The Confession",
+    title: "Hermosa",
     description:
-      "Replace this with your confession story. How did you tell them how you feel? What made it special?",
-    image: null,
+      "Desde que te vi, supe que eras una mujer muy hermosa, nunca lo dude, esos ojos tan lindos y esa sonrisa tan especial me cautivaron desde el principio.",
+    image: "/romantic.png",
   },
   {
-    emoji: "💍",
-    time: "00:00",
-    date: "DD Month YYYY",
-    title: "They Said Yes",
+    emoji: "💖",
+    title: "Tierna",
     description:
-      "Replace this with the moment they said yes. That one word that changed everything.",
-    image: null,
+      "Siempre me has demostrado ser una persona muy tierna, y eso es algo que me encanta de ti, esa ternura que tienes me hace sentir muy especial y querido",
+    image: "/gato.png",
   },
   {
     emoji: "💕",
-    time: "00:00",
-    date: "DD Month YYYY",
-    title: "First \"I Love You\"",
+    title: "Una mujer fuerte y valiente",
     description:
-      "Replace this with your first \"I love you\" moment. The words that made it all real.",
-    image: null,
+      "Me da mucho orgullo todo lo que has logrado hasta ahora, y se que solo es un comienzo de todo lo que vas a lograr, aún con todas las dificultades, mi manguito es siempre fuerte y muy valiente",
+    image: "/love.webp",
   },
   {
     emoji: "🦋",
-    time: "00:00",
-    date: "DD Month YYYY",
-    title: "Getting to Know Each Other",
+    title: "Inteligente",
     description:
-      "Replace this with a meaningful conversation or detail you discovered about each other.",
-    image: null,
+      "Una niña muy inteligente, tanto que ha logrado ser la mejor en la escuela y en todo lo que se propone",
+    image: "/intel.jpg",
   },
   {
     emoji: "🤗",
-    time: "00:00",
-    date: "DD Month YYYY",
-    title: "A Sweet Moment",
+    title: "Una persona",
     description:
-      "Replace this with a sweet, tender moment you shared - a virtual hug, a kind gesture, or a warm exchange.",
-    image: null,
+      "No somos perfectos amor, y te veo como una persona, no como un robot, sentimos y siempre sentiremos, eso es lo que nos hace humanos, y eso es lo que me gusta de ti, que eres una persona con sentimientos y emociones, y no un robot sin sentimientos, chingao, como amo tu forma de ser",
+    image: "/enamrodao.jpg",
   },
   {
-    emoji: "🧸",
-    time: "00:00",
-    date: "DD Month YYYY",
-    title: "Making It Official ♥",
+    emoji: "💋",
+    title: "Sexy jujuju",
     description:
-      "Replace this with the moment it all became official. When the labels stopped mattering because the love was already real.",
-    image: null,
+      "Aunque no lo creas, eres muy setsi, wof wof, esa cintura y esas piernas me vuelven loco, y no puedo dejar de pensar en ti, y en lo que me gustaria hacer contigo, jejeje",
+    image: "/sexy.jpeg",
   },
 ];
 
@@ -101,14 +88,13 @@ const TIMELINE: TimelineItem[] = [
   ╚══════════════════════════════════════════════════╝
 */
 const FLOATING_WORDS = [
-  "forever",
-  "us",
-  "home",
-  "dream",
-  "always",
-  "together",
-  "yours",
-  "heart",
+  "Hermosa",
+  "Tierna",
+  "Sexy",
+  "Valiente",
+  "Fuerte",
+  "Inteligente",
+  "Amorosa",
 ];
 
 export default function Home() {
@@ -148,7 +134,7 @@ export default function Home() {
               animate={{ opacity: [0.6, 1, 0.6] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             >
-              They said yes 💍
+              Feliz aniversario mi manguito
             </motion.p>
           </Reveal>
 
@@ -159,32 +145,31 @@ export default function Home() {
                 animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
               >
-                Your Name
+                Doc Dasha Leney...
               </motion.span>
             </h1>
           </Reveal>
 
           <Reveal variant="blur" delay={0.5}>
             <p className="mx-auto mt-4 max-w-sm font-signature text-xl text-plum/70 sm:mt-6 sm:max-w-lg sm:text-2xl md:text-3xl">
-              my forever, my everything
+              Para esa niña que es tan especial
             </p>
           </Reveal>
 
           <Reveal variant="fadeUp" delay={0.7}>
             <p className="mx-auto mt-4 max-w-xs text-xs leading-relaxed text-white/50 sm:mt-6 sm:max-w-md sm:text-sm">
-              Replace this with the date and time your story began. This little corner
-              of the internet is yours to fill.
+              Todo empezo con una app bien rarita jeje, pero pudo conectarme contigo y aprender contigo...
             </p>
           </Reveal>
 
           <Reveal variant="fadeUp" delay={0.9}>
             <motion.a
-              href="#our-story"
+              href="#love-heart"
               className="animate-pulse-glow group mt-8 inline-flex items-center gap-2 rounded-full border border-orchid/30 bg-orchid/10 px-6 py-2.5 text-xs font-medium text-plum backdrop-blur-sm transition-all duration-300 hover:border-orchid/60 hover:bg-orchid/20 sm:mt-10 sm:px-8 sm:py-3 sm:text-sm"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Our Story
+              Ve abajo bobita, hay mas...
               <motion.span
                 animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -197,6 +182,25 @@ export default function Home() {
 
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0e0b16] to-transparent sm:h-32" />
+      </section>
+
+      {/* ═══════════ HEART WORD CLOUD ═══════════ */}
+      <section id="love-heart" className="relative px-4 py-16 sm:px-6 sm:py-24">
+        <Reveal variant="fadeUp">
+          <div className="mx-auto max-w-5xl text-center">
+            <p className="mb-6 text-xs font-medium tracking-[0.28em] uppercase text-plum sm:text-sm">
+              Un poquito mas de amor
+            </p>
+            <WordHeart
+              centerText="Love you."
+              words={FLOATING_WORDS}
+              hue={336}
+              accent="#ff2d75"
+              className="max-w-full"
+              centerClassName="drop-shadow-[0_0_24px_rgba(255,45,117,0.35)]"
+            />
+          </div>
+        </Reveal>
       </section>
 
       {/* ═══════════ TIMELINE — folding cards ═══════════ */}
@@ -216,11 +220,11 @@ export default function Home() {
                   paddingBottom: 4,
                 }}
               >
-                Our Story
+                ¿Quién es manguito para mi?
               </motion.span>
             </h2>
             <p className="mt-3 text-center text-xs text-white/40 sm:mt-4 sm:text-sm">
-              One day. Many moments. A lifetime beginning.
+              Esto expresa lo que pienso y siento por ti...
             </p>
           </Reveal>
 
@@ -304,16 +308,18 @@ export default function Home() {
                     {item.image && (
                       <button
                         type="button"
-                        onClick={() => setModalImage({ src: item.image!, alt: item.title })}
+                        onClick={() => setModalImage({ src: item.image!, alt: item.title ?? "Timeline image" })}
                         className="block w-full border-t border-white/5 active:opacity-80"
                       >
-                        <Image
-                          src={item.image}
-                          alt={item.title}
-                          width={400}
-                          height={300}
-                          className="w-full object-cover"
-                        />
+                        <div className="relative aspect-square w-full overflow-hidden sm:aspect-[4/3]">
+                          <Image
+                            src={item.image}
+                            alt={item.title ?? "Timeline image"}
+                            fill
+                            sizes="(max-width: 640px) 100vw, 50vw"
+                            className="object-cover object-center"
+                          />
+                        </div>
                       </button>
                     )}
                   </div>
@@ -323,137 +329,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <SectionDivider />
-
-      {/* ═══════════ YOU & ME ═══════════ */}
-      <FoldSection className="relative px-4 py-16 sm:px-6 sm:py-28">
-        {/* Background glow */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-orchid/8 blur-[80px] sm:h-96 sm:w-96 sm:blur-[120px]" />
-          <div className="absolute left-1/3 top-1/3 h-32 w-32 rounded-full bg-tomato/5 blur-[60px] sm:h-48 sm:w-48" />
-          <div className="absolute right-1/3 bottom-1/3 h-32 w-32 rounded-full bg-plum/5 blur-[60px] sm:h-48 sm:w-48" />
-        </div>
-
-        <div className="relative mx-auto max-w-lg text-center">
-          {/* Floating words orbit */}
-          <div className="relative mx-auto mb-8 h-48 w-48 sm:mb-12 sm:h-64 sm:w-64">
-            {FLOATING_WORDS.map((word, i) => {
-              const angle = (360 / FLOATING_WORDS.length) * i;
-              const radius = 38;
-              return (
-                <motion.span
-                  key={word}
-                  className="absolute left-1/2 top-1/2 font-signature text-xs text-white/15 sm:text-sm"
-                  style={{
-                    x: `calc(-50% + ${Math.cos((angle * Math.PI) / 180) * radius}%)`,
-                    y: `calc(-50% + ${Math.sin((angle * Math.PI) / 180) * radius}%)`,
-                  }}
-                  animate={{
-                    opacity: [0.1, 0.35, 0.1],
-                    scale: [0.9, 1.05, 0.9],
-                  }}
-                  transition={{
-                    duration: 4 + i * 0.5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: i * 0.6,
-                  }}
-                >
-                  {word}
-                </motion.span>
-              );
-            })}
-
-            {/* Centre heart */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <motion.span
-                className="text-5xl sm:text-6xl"
-                animate={{
-                  scale: [1, 1.15, 1],
-                  filter: [
-                    "drop-shadow(0 0 8px rgba(255,170,234,0.3))",
-                    "drop-shadow(0 0 20px rgba(255,170,234,0.6))",
-                    "drop-shadow(0 0 8px rgba(255,170,234,0.3))",
-                  ],
-                }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              >
-                💕
-              </motion.span>
-            </div>
-          </div>
-
-          {/* Main text */}
-          <Reveal variant="fadeUp">
-            <h2 className="font-heading text-3xl tracking-wide text-plum sm:text-4xl md:text-5xl">
-              <motion.span
-                whileInView={{ backgroundSize: ["0% 2px", "100% 2px"] }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                style={{
-                  backgroundImage: "linear-gradient(to right, #FB4D3D, #FFAAEA)",
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "bottom center",
-                  backgroundSize: "0% 2px",
-                  paddingBottom: 4,
-                }}
-              >
-                You & Me
-              </motion.span>
-            </h2>
-          </Reveal>
-
-          <Reveal variant="fadeUp" delay={0.15}>
-            <p className="mt-4 font-signature text-lg text-white/30 sm:mt-5 sm:text-xl">
-              this is just the beginning
-            </p>
-          </Reveal>
-
-          {/* Verse */}
-          <Reveal variant="fadeUp" delay={0.3}>
-            <div className="mt-8 space-y-3 sm:mt-10 sm:space-y-4">
-              <p className="text-sm leading-relaxed text-white/50 sm:text-base">
-                I don&apos;t know what tomorrow looks like,
-              </p>
-              <p className="text-sm leading-relaxed text-white/50 sm:text-base">
-                but I know who I want next to me when it comes.
-              </p>
-              <motion.p
-                className="pt-2 font-signature text-lg text-plum/60 sm:text-xl"
-                whileInView={{ opacity: [0, 1] }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.2, delay: 0.8 }}
-              >
-                it&apos;s you. it was always you.
-              </motion.p>
-            </div>
-          </Reveal>
-
-          {/* Day 1 badge */}
-          <Reveal variant="scaleUp" delay={0.5}>
-            <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/5 bg-white/[0.03] px-5 py-2.5 sm:mt-10 sm:px-6 sm:py-3">
-              <motion.span
-                className="text-sm text-saffron/70 sm:text-base"
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                ✦
-              </motion.span>
-              <span className="text-xs tracking-widest text-white/40 uppercase sm:text-sm">
-                Day 1 of Forever
-              </span>
-              <motion.span
-                className="text-sm text-saffron/70 sm:text-base"
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-              >
-                ✦
-              </motion.span>
-            </div>
-          </Reveal>
-        </div>
-      </FoldSection>
 
       <SectionDivider />
 
@@ -507,74 +382,43 @@ export default function Home() {
 
             <Reveal variant="fadeUp">
               <p className="font-signature text-2xl text-plum sm:text-3xl md:text-4xl">
-                Dear [Name],
+                Querida Dasha Leney,
               </p>
             </Reveal>
             <Reveal variant="fadeUp" delay={0.2}>
               <div className="mt-4 space-y-3 text-xs leading-relaxed text-white/60 sm:mt-6 sm:space-y-4 sm:text-sm">
                 <p>
-                  Replace this paragraph with your own words. Tell them how you
-                  feel, what made you notice them, why they matter to you.
+                  Desde que te conoci has sido una persona maravillosa en mi vida, me has llenado de alegria, amor y felicidad en lo que hemos hablado, y siempre me has demostrado lo mejor de ti.
                 </p>
                 <p>
-                  Write something honest. Something that sounds like you. You don&apos;t
-                  need perfect words - just real ones.
+                  Aunque también los malos, pero que seriamos si no fueramos humanos? Eso amor, es lo que somos, nunca te de pena de demostrar lo que sientes, nunca guardarse nada y siempre confiar en tus seres queridos, te amo tal y como eres.
                 </p>
                 <p>
-                  Talk about your hopes, your dreams for the two of you. What do
-                  you want to build together? What kind of future do you picture?
+                  Has logrado mucho tu solita, y eso me hace sentur muy orgullosa de mi manguito, tan fuerte y tan valiente que eres, eso es lo que te define Len, eres una persona que se preoucpa por los demás y a pesar de todo, sigues luchando, y estoy origulloso de ti, nunca olvides todo lo que has logrado desde el principio, tu puedes con todo y mucho más, si? (jujuju responde con si en tu mente)
                 </p>
                 <p>
-                  And finally, tell them what you need from them. Honesty.
-                  Patience. A chance. Whatever feels true.
+                  Por ulitmo, te queria decir Te amo, amo la persona en la que eres y amo la persona en la que te queires convertir, amo la perseverancia con la que luchas por tus sueños y amo tu forma de ser, y aunque no lo creas y aún no lo veas, eres hermosa, siempre lo has sido, algún dia te darás cuenta de todo lo que has logrado y dirás, "woooow, diblios tio, soy una bomba", y eso amor, eso es lo que eres, te amo hermosa.
+                </p>
+                <p>
+                  Ush, otra cosa, nunca olvides a los que te rodean, siempre habra altas y bajas (nata? mentira JAJAJ), pero siempre recuerda a las personas que siempre están para ti, tu mami, tu hermana y tu hermano, no olvidemos a tu mejor amiga, y seguramente más familia y amigos que aún no ves que tienes y puedes contar con ellos, todos ellos te dan amor, y siempre lo harán, ellos son tu pilar más fuerte en tu vida, nunca lo olvides hermosa niña, nunca estás sola, nunca lo estarás. Y aunque yo ya no esté, nunca olvides todo lo que te enseñe, nunca estás sola y recuerdaaaaa mi amor, un dia a la vez...
+                </p>
+                <p>
+                  AHora si, BAJAAJAJAJ, pinche mujer tan hermosa dios mio, pechiocha princesa futura doctora con lindos ojos, nariz y boquita preciosa, nunca olvides todo lo que te define, y te hace ser tú amor, nunca lo olvides. Y si no es en este tiempo, algún día pueda recontrarme contigo...
                 </p>
                 <p className="text-white/80">
-                  Sign it with something personal. A time, a date, a feeling. Make
-                  it yours.
+                  Para mi manguito, con todo mi amor.
                 </p>
               </div>
             </Reveal>
             <Reveal variant="fadeUp" delay={0.4}>
               <p className="mt-6 font-signature text-xl text-saffron/60 sm:mt-8 sm:text-2xl">
-                Forever yours, at [time] ♥
+                Te amo, siempre lo he hecho... ♥
               </p>
             </Reveal>
           </motion.div>
         </div>
       </FoldSection>
 
-      {/* ═══════════ FOOTER ═══════════ */}
-      <footer className="relative border-t border-white/5 py-12 text-center sm:py-16">
-        <Reveal variant="fadeUp">
-          <motion.p
-            className="font-signature text-xl text-plum/40 sm:text-2xl"
-            whileInView={{ scale: [0.9, 1] }}
-            viewport={{ once: true }}
-          >
-            Made with{" "}
-            <motion.span
-              className="inline-block text-tomato/60"
-              animate={{ scale: [1, 1.3, 1] }}
-              transition={{ duration: 1.2, repeat: Infinity }}
-            >
-              ♥
-            </motion.span>
-            {" "}for someone special
-          </motion.p>
-          <p className="mt-3 text-xs text-white/30 sm:mt-4 sm:text-sm">
-            your little corner of the internet
-          </p>
-          <p className="mt-2 text-[10px] text-white/15 sm:text-xs">
-            [Date] ♥ the night everything began
-          </p>
-        </Reveal>
-      </footer>
-      {/* Image lightbox modal */}
-      <ImageModal
-        src={modalImage?.src ?? null}
-        alt={modalImage?.alt ?? ""}
-        onClose={() => setModalImage(null)}
-      />
     </main>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { MusicPlayer } from "@/components/music-player";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
@@ -36,6 +37,7 @@ export default function RootLayout({
       </head>
       <body className="overflow-x-hidden overflow-y-auto">
         <SmoothScroll>{children}</SmoothScroll>
+        <MusicPlayer />
       </body>
     </html>
   );
