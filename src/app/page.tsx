@@ -403,7 +403,10 @@ export default function Home() {
                   Ush, otra cosa, nunca olvides a los que te rodean, siempre habra altas y bajas (nata? mentira JAJAJ), pero siempre recuerda a las personas que siempre están para ti, tu mami, tu hermana y tu hermano, no olvidemos a tu mejor amiga, y seguramente más familia y amigos que aún no ves que tienes y puedes contar con ellos, todos ellos te dan amor, y siempre lo harán, ellos son tu pilar más fuerte en tu vida, nunca lo olvides hermosa niña, nunca estás sola, nunca lo estarás. Y aunque yo ya no esté, nunca olvides todo lo que te enseñe, nunca estás sola y recuerdaaaaa mi amor, un dia a la vez...
                 </p>
                 <p>
-                  AHora si, BAJAAJAJAJ, pinche mujer tan hermosa dios mio, pechiocha princesa futura doctora con lindos ojos, nariz y boquita preciosa, nunca olvides todo lo que te define, y te hace ser tú amor, nunca lo olvides. Y si no es en este tiempo, algún día pueda recontrarme contigo...
+                  AHora si, BAJAAJAJAJ, pinche mujer tan hermosa dios mio, pechiocha princesa futura doctora con lindos ojos, nariz y boquita preciosa, nunca olvides todo lo que te define, y te hace ser tú amor, nunca lo olvides. 
+                </p>
+                <p>
+                  Y si no es en este tiempo, espero algún día pueda recontrarme contigo...
                 </p>
                 <p className="text-white/80">
                   Para mi manguito, con todo mi amor.
